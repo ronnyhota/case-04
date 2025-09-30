@@ -85,7 +85,7 @@
       };
 
       try {
-        const res = await fetch("http://127.0.0.1:59947/v1/survey", {
+        const res = await fetch("http://127.0.0.1:5000/v1/survey", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -104,7 +104,7 @@
         }
       } catch (err) {
         result.className = "result error";
-        result.textContent = "Network error. Is the API running at http://127.0.0.1:59769?";
+        result.textContent = "Network error. Is the API running at http://127.0.0.1:60216?";
       } finally {
         submitBtn.disabled = false;
       }
