@@ -1,7 +1,6 @@
 from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, Field, EmailStr, validator
-import uuid
 
 class SurveySubmission(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
@@ -26,4 +25,4 @@ class SurveySubmission(BaseModel):
 class StoredSurveyRecord(SurveySubmission):
     received_at: datetime
     ip: str
-    submission_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    submission_id: str
